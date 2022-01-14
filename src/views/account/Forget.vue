@@ -59,7 +59,7 @@
                 </a-form-item>
 
                 <a-form-item>
-                    <a-button type="primary" html-type="submit" block>注册</a-button>
+                    <a-button type="primary" html-type="submit" block>重置密码</a-button>
                 </a-form-item>
             </a-form>
             <div class="text-center fs-12">
@@ -68,8 +68,8 @@
                     使用<router-link to=""></router-link>标签，
                     一定要加 to 属性，不然会报错 
                 -->
-                <router-link class="color-white" to="/forget">忘记密码</router-link> |
-                <router-link class="color-white" to="/">登录</router-link>
+                <router-link class="color-white" to="/">登录</router-link> |
+                <router-link class="color-white" to="/register">注册</router-link>
             </div>
         </div>
     </div>

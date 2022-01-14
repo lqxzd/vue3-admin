@@ -25,7 +25,7 @@
                     使用<router-link to=""></router-link>标签，
                     一定要加 to 属性，不然会报错 
                 -->
-                <router-link class="color-white" to="">忘记密码</router-link> |
+                <router-link class="color-white" to="/forget">忘记密码</router-link> |
                 <router-link class="color-white" to="/register">注册</router-link>
             </div>
         </div>
