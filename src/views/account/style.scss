@@ -1,0 +1,21 @@
+.account{
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+    
+    //弹性布局-居中
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.form-wrap{
+    width: 280px;
+    color: #fff;
+    label{
+        display: block;
+        font-size: 14px;
+        color: #fff;
+    }
+}
