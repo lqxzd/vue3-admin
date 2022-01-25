@@ -1,5 +1,8 @@
 <template>
   <div id="header">
+    <div class="collapsed-button" @click="collapsedButton">
+      <i class="icon icon-size-20 mb--5 icon-header-collapsed"></i>
+    </div>
     <div class="header-menu">
       <a-dropdown>
         <a class="ant-dropdown-link" @click.prevent>
@@ -8,11 +11,15 @@
         <template #overlay>
           <a-menu>
             <a-menu-item key="0">
-              <div class="menu-item">ZeroData</div>
+              <div class="menu-item">
+                <i class="icon icon-size-20 mb--5 icon-header-user"></i>
+                ZeroData
+              </div>
             </a-menu-item>
             <a-menu-divider />
             <a-menu-item key="1">
               <div class="menu-item menu-lang">
+                <i class="icon icon-size-20 mb--5 icon-header-language"></i>
                 <span 
                   v-for="item in data.lang" 
                   :key="item.value" 
@@ -25,7 +32,10 @@
             </a-menu-item>
             <a-menu-divider />
             <a-menu-item key="3">
-              <div class="menu-item">{{ $t("header_menu.logout") }}</div>
+              <div class="menu-item">
+                <i class="icon icon-size-20 mb--5 icon-header-exit"></i>
+                {{ $t("header_menu.logout") }}
+              </div>
             </a-menu-item>
           </a-menu>
         </template>
@@ -36,12 +46,14 @@
 
 <script>
 
-import { reactive } from "vue"
+import { reactive, getCurrentInstance } from "vue"
 import { useI18n } from 'vue-i18n'
 
 export default {
   name: "Header",
   setup(){
+    
+    const { emit } = getCurrentInstance();
 
     const { locale } = useI18n({ useScope: 'global' });
 
@@ -53,14 +65,20 @@ export default {
       lang_current: "ch"
     });
 
+    //切换语言
     const toggleLang = (lang) => {
       locale.value = lang;
       data.lang_current = lang;
     }
 
+    const collapsedButton = () => {
+      emit("collapsed", {aa: 11,bb: "xx"})
+    }
+
     return {
       data,
-      toggleLang
+      toggleLang,
+      collapsedButton
     }
   },
 }
@@ -83,8 +101,12 @@ export default {
 }
 .menu-lang{
   color: #aeaeae;
-  span{ margin-right: 10px; }
+  span{ margin: 0 5px; }
   .current{ color: #333333; }
+}
+.collapsed-button{
+  float: left;
+  cursor: pointer;
 }
 
 </style>

@@ -33,11 +33,15 @@
 </template>
 
 <script>
-import {onMounted, reactive, toRefs, ref } from "vue";
+import {onMounted, reactive, toRefs, ref, getCurrentInstance } from "vue";
 export default {
     name: "Login",
     // eslint-disable-next-line no-unused-vars
     setup(props){
+
+        // ctx 的作用是获取实例上下文，相当于 vue2.0 里的 this 对象
+        const { ctx } = getCurrentInstance();
+
         const formConfig = reactive({
             layout: {
                 labelCol: { span: 4 },

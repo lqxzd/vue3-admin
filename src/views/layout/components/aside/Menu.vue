@@ -1,19 +1,28 @@
 /* eslint-disable vue/valid-v-else */
 <template>
     <a-sub-menu :key="menu.path">
-        <template #title>{{ menu.meta && menu.meta.title }}</template>
+        <template #title>
+            <span class="anticon">
+                <i class="icon icon-size-21 mb--5" :class="menu.meta && menu.meta.icon"></i>
+            </span>
+            <span>
+                {{ menu.meta && menu.meta.title }}
+            </span>
+        </template>
         <template v-if="menu.children.length">
             <template v-for="item in menu.children">
-                <!-- 不存在子级的 -->
-                <a-menu-item v-if="!item.children" :key="item.path">
-                    <router-link
-                        :to="item.path"
-                    >{{ item.meta && item.meta.title }}</router-link>
-                </a-menu-item>
+                <template v-if="!item.hidden">
+                    <!-- 不存在子级的 -->
+                    <a-menu-item v-if="!item.children" :key="item.path">
+                        <router-link :to="item.path">
+                            <span>{{ item.meta && item.meta.title }}</span>
+                        </router-link>
+                    </a-menu-item>
 
-                <!-- 存在子级的 -->
-                <!-- eslint-disable-next-line vue/valid-v-for -->
-                <Menu v-else :menu="item" />
+                    <!-- 存在子级的 -->
+                    <Menu v-else :menu="item" :key="item.path" />             
+                </template>
+
             </template>
         </template>
     </a-sub-menu>
@@ -25,7 +34,7 @@ export default {
     props: {
         menu: {
             type: Object,
-
+            default: () => ({})
         }
     },
     data() {
@@ -36,5 +45,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.aside-home {
+    i.icon {
+        margin-right: 5px;
+        opacity: 0.6;
+    }
+    .ant-menu-submenu-open {    
+        > div{
+            i.icon {
+                opacity: 1;
+            }
+        }
+    }
+}
 </style>
