@@ -26,6 +26,7 @@ export function checkPassword(value){
  * @returns 
  */
 export function checkCode(value){
-    let regCode = /^(?!\D+$)(?![^a-zA-Z]+$)\S{6}$/;
+    // let regCode = /^(?!\D+$)(?![^a-zA-Z]+$)\S{6}$/; //6位的字母加数字
+    let regCode = /^\d{6}$/;
     return regCode.test(value);
 }

@@ -18,7 +18,7 @@ import SvgIcon from "@/components/Svgicon";
 //svg文件解析
 import "./js/svg";
 
-const app = createApp();
+const app = createApp(App);
 
 //注入axios
 app.config.globalProperties.$axios = Axios;
