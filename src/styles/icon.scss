@@ -1,0 +1,29 @@
+i[class^=icon]{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+/*图标尺寸*/
+.icon-size-50{ width: 50px; height: 50px; }
+.icon-size-30{ width: 30px; height: 30px; }
+.icon-size-21{ width: 21px; height: 21px; }
+.icon-size-20{ width: 20px; height: 20px; }
+
+/*偏移*/
+.mb--5{ margin-bottom: -5px; }
+
+
+/*图标*/
+//侧边菜单
+.icon-aside-home{ background-image: url("~@/assets/icon/aside-home.png"); }
+.icon-aside-console{ background-image: url("~@/assets/icon/aside-console.png"); }
+.icon-aside-information{ background-image: url("~@/assets/icon/aside-information.png"); }
+.icon-aside-product{ background-image: url("~@/assets/icon/aside-product.png"); }
+.icon-aside-member{ background-image: url("~@/assets/icon/aside-member.png"); }
+//heaer
+.icon-header-user{ background-image: url("~@/assets/icon/header-user.png"); }
+.icon-header-language{ background-image: url("~@/assets/icon/header-language.png"); }
+.icon-header-exit{ background-image: url("~@/assets/icon/header-exit.png"); }
+.icon-header-collapsed{ background-image: url("~@/assets/icon/collapsed-20.png"); }
+
