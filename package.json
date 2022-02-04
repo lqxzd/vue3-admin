@@ -5,12 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "serve-test": "vue-cli-service serve --mode test",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "ant-design-vue": "^2.2.8",
+    "axios": "^0.25.0",
     "core-js": "^3.6.5",
+    "js-cookie": "^3.0.1",
+    "js-md5": "^0.7.3",
     "vue": "^3.0.0",
+    "vue-i18n": "^9.2.0-beta.26",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
