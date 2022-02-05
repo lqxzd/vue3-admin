@@ -10,6 +10,9 @@ import "ant-design-vue/dist/antd.css";
 //axios
 import Axios from "axios";
 
+//路由拦截
+import "./router/permit"
+
 //语言
 import VueI18n from "./language";
 
